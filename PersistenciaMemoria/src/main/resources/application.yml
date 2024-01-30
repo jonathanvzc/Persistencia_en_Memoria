@@ -5,4 +5,4 @@ spring:
     pathmatch:
       matching-strategy=ant-path-matcher:
 server:
-  port: 15467
+  port: 8080
