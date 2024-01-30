@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+<body>
+<h1>Local Storage User Collection</h1>
+<p>Se utiliza Local Storage para almacenar una colección de usuarios.</p>
+
+<h1>Participantes</h1>
+<ul th:each="user : ${users}">
+    <li th:text="${user.name} + ' ' + ${user.lastName} + ' - ' + ${user.email}"></li>
+</ul>
+
+<!-- Script para almacenar y recuperar usuarios del Local Storage -->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var users = /*[[${users}]]*/ [];
+    localStorage.setItem('userCollection', JSON.stringify(users));
+
+    var storedUsers = JSON.parse(localStorage.getItem('userCollection'));
+    console.log(storedUsers);
+    /*]]>*/
+</script>
+</body>
+</html>

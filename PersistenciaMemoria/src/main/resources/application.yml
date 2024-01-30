@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Persistencia-en-Memoria
+  mvc:
+    pathmatch:
+      matching-strategy=ant-path-matcher:
+server:
+  port: 15467
