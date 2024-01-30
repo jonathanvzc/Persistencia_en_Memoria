@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+<body>
+    <h1>Local Storage User Collection</h1>
+    <p>Se utiliza Local Storage para almacenar una colección de usuarios.</p>
+
+    <h1>Participantes</h1>
+    <p>Jonathan Zepeda</p>
+	<p>Gary J. Ortiz </p>
+	
+    <script>
+        // Definir la colección de usuarios
+        var users = [
+            { id: 1, name: 'John', lastName: 'Doe', email: 'john.doe@example.com' },
+            { id: 2, name: 'Jane', lastName: 'Smith', email: 'jane.smith@example.com' }
+        ];
+
+        // Convertir la colección a cadena JSON y almacenarla en Local Storage
+        localStorage.setItem('userCollection', JSON.stringify(users));
+
+        // Recuperar la colección del Local Storage y convertirla de nuevo a objeto
+        var storedUsers = JSON.parse(localStorage.getItem('userCollection'));
+
+        // Imprimir la colección recuperada en la consola
+        console.log(storedUsers);
+    </script>
+</body>
+</html>
